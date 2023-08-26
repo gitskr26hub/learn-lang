@@ -12,12 +12,12 @@ import { useSelector } from "react-redux";
 const App = () => {
 
 
-  const navigate=useNavigate()
-  const {words}=useSelector((state:{root:StateType})=>state.root)
+  // const navigate=useNavigate()
+  // const {words}=useSelector((state:{root:StateType})=>state.root)
 
-  useEffect(()=>{
-    navigate("/")
-  },[words.length==0])
+  // useEffect(()=>{
+  //   navigate("/")
+  // },[words.length==0])
 
 
   return (
