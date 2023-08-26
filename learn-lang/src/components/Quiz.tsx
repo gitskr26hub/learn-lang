@@ -15,7 +15,7 @@ const navigate=useNavigate()
 const dispatch=useDispatch()
 
 
-const {loading,words}=useSelector((state:{root:StateType})=>state.root)
+const {words}=useSelector((state:{root:StateType})=>state.root)
 // console.log(loading,words)
 
 
@@ -54,7 +54,7 @@ const nextHandler = ():void =>{
         <RadioGroup value={ans}
         onChange={(e)=>setAnswer(e.target.value)}>
            {
-          words[count]?.options?.map((option,index)=>{
+          words[count]?.options?.map((option)=>{
            return <FormControlLabel
           value={option}
           key={option}
