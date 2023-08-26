@@ -28,6 +28,7 @@ const Learning = () => {
     //   console.log(loading,result,words)
 
     useEffect(()=>{
+         if(words.length==0)navigate("/")
         dispatch(getWordsrequest())
         translateWords(params||"hi").then((res)=>{
             // console.log(res)
