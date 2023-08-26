@@ -1,0 +1,47 @@
+
+body:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+   
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-size: 400%;
+  z-index: -1000;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: 100%;
+  height: 
+  calc(110% )
+  ;
+ 
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+  opacity: 60%;
+  overflow: hidden;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
