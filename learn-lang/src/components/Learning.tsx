@@ -28,20 +28,23 @@ const Learning = () => {
     //   console.log(loading,result,words)
 
     useEffect(()=>{
-         if(words.length==0)navigate("/")
+        
+
         dispatch(getWordsrequest())
         translateWords(params||"hi").then((res)=>{
             // console.log(res)
             dispatch(getWordsSuccess(res))
-          
+           
         }).catch((err)=>{
             dispatch(getWordsfail(err))
             // console.log(err)
+            if(words.length==0)navigate("/")
         })
 
         if(error){
             alert(error)
             dispatch(clearState())
+            if(words.length==0)navigate("/")
         }
 
     },[])
