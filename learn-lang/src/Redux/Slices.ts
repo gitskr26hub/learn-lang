@@ -20,6 +20,8 @@ const rootSlice = createSlice({
         getWordsSuccess:(state,action:PayloadAction<Wordtype[]>)=>{
             state.loading=false
             state.words=action.payload
+            sessionStorage.setItem('words',JSON.stringify(action.payload))
+            
         },
         getWordsfail:(state,action:PayloadAction<string>)=>{
             state.loading=false
@@ -34,6 +36,7 @@ const rootSlice = createSlice({
             state.result=[],
             state.words=[],
             state.error=undefined
+            
         }
         
     }
