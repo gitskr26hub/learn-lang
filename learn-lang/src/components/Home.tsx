@@ -13,8 +13,8 @@ const Home = () => {
     const [screenSize, setScreenSize] = useState<number>(getCurrentDimension());
 
     const SelectLangauge=(code:string):void => {
-    
-        navigate(`/learn?language=${code}`)
+    sessionStorage.setItem("language",JSON.Stringiy({"language":`${code}`}))
+        navigate(`/learn`)
 
     }
 
