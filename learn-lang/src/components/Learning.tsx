@@ -2,7 +2,7 @@ import { useEffect, useState,useRef } from "react"
 import {Container,Button,Typography,Stack} from "@mui/material"
 import {useDispatch,useSelector} from "react-redux"
 
-import {useSearchParams,useNavigate} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 import { ArrowBack,VolumeUp } from "@mui/icons-material"
 import { getAudioMsg, translateWords } from "../utils/features"
 import { clearState, getWordsSuccess, getWordsfail, getWordsrequest } from "../Redux/Slices"
@@ -12,7 +12,7 @@ const Learning = () => {
     const [count,setCount]=useState<number>(0)
     const [Audiosec,setAudiosec]=useState<string>('')
     const dispatch=useDispatch()
-    const params=useSearchParams()[0].get("language") as LangType
+    const params=JSON.parse(sessionStorage.getItem("language")!) as LangType
     // console.log("🚀 ~ file: Learning.tsx:9 ~ Learning ~ params:", params)
     // // [0].get("language") as LangType
     const navigate=useNavigate()
