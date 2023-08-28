@@ -12,7 +12,7 @@ const Learning = () => {
     const [count,setCount]=useState<number>(0)
     const [Audiosec,setAudiosec]=useState<string>('')
     const dispatch=useDispatch()
-    const params=JSON.parse(sessionStorage.getItem("language")!) as LangType
+    const params=JSON.parse(sessionStorage.getItem("language")!).language as LangType
     // console.log("🚀 ~ file: Learning.tsx:9 ~ Learning ~ params:", params)
     // // [0].get("language") as LangType
     const navigate=useNavigate()
