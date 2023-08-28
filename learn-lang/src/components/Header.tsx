@@ -15,6 +15,10 @@ const style={
 const Header = () => {
     const dispatch=useDispatch()
   return (
+     <div
+      className="box"
+     
+    >
     <AppBar  position="static" style={{zIndex:"100000",position:"sticky",top:"10px"}}>
         <Toolbar sx={{backgroundColor:"red"}}>
             <Typography variant="h5" mr={'auto'} color="white" fontStyle={'italic'}
@@ -27,6 +31,7 @@ const Header = () => {
         </Toolbar>
       
     </AppBar>
+    </div>
   )
 }
 
