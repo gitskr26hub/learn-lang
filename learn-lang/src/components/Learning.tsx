@@ -24,17 +24,16 @@ const Learning = () => {
         setAudiosec('')
     }
 
-    const {loading,words,error}=useSelector((state:{root:StateType})=>state.root)
+    const {loading,error}=useSelector((state:{root:StateType})=>state.root)
+    const words=JSON.parse(sessionStorage.getItem("words")!)||[]
     //   console.log(loading,result,words)
 
     useEffect(()=>{
-        
-
         dispatch(getWordsrequest())
         translateWords(params||"hi").then((res)=>{
-            // console.log(res)
+            //  console.log("res",res)
             dispatch(getWordsSuccess(res))
-           
+          
         }).catch((err)=>{
             dispatch(getWordsfail(err))
             // console.log(err)
@@ -69,7 +68,7 @@ const Learning = () => {
     }
 
 
-      if(loading)return <Loader/>
+      if(loading|| words.length==0)return <Loader/>
 
   return (
     <Container maxWidth='sm' sx={{padding:"1rem"}}>
