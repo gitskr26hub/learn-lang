@@ -14,7 +14,8 @@ import { clearState } from "../Redux/Slices";
 
 const Result = () => {
   const [check,setCheck]=useState<number>(0)
-  const {result,words}=useSelector((state:{root:StateType})=>state.root)
+  const {result}=useSelector((state:{root:StateType})=>state.root)
+  const words:Wordtype[]=JSON.parse(sessionStorage.getItem("words")!)
   //  console.log(result,"words",words)
 
   const PassingMarks:number=5
