@@ -1,11 +1,13 @@
 import { Button, Container, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Typography } from "@mui/material"
 import { useState,useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { useSelector,useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { saveResult } from "../Redux/Slices";
 
 const Quiz = () => {
-const [result,setresult]=useState<string[]>([])
+  
+const words:Wordtype[]= JSON.parse(sessionStorage.getItem("words")!)
+const [result,setresult]=useState<string[]>(JSON.parse(sessionStorage.getItem("result")!)||[])
 
 const [count,setCount]=useState<number>(0)
 
@@ -15,7 +17,6 @@ const navigate=useNavigate()
 const dispatch=useDispatch()
 
 
-const {words}=useSelector((state:{root:StateType})=>state.root)
 // console.log(loading,words)
 
 
@@ -28,7 +29,8 @@ const nextHandler = ():void =>{
 
 
      useEffect(()=>{
-      if(count+1>words.length){navigate('/result')
+      if(count+1>words.length){
+        navigate('/result')
       }
       dispatch(saveResult(result))
      },[result])
