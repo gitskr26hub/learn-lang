@@ -35,7 +35,9 @@ const rootSlice = createSlice({
             state.loading=false,
             state.result=[],
             state.words=[],
-            state.error=undefined
+            state.error=undefined,
+            sessionStorage.removeItem("words"),
+            sessionStorage.removeItem("language")
             
         }
         
